@@ -1,0 +1,722 @@
+@charset "utf-8";
+
+
+// colors
+$colorBase:#202124;
+$colorMain:#1C1D1F;
+$colorAccent:#F3A70D;
+$colorLetter:#e8eaed;
+// colors
+
+
+// ブレイクポイント
+$breakpoints: (
+    'sp': 'screen and (max-width: 767px)',
+    'tab': 'screen and (min-width: 768px) and (max-width: 1023px)',
+    'pc': 'screen and (min-width: 1024px)'
+) !default;
+// ブレイクポイント
+
+// メディアクエリ
+@mixin mq($breakpoints: sp) {
+    @media #{map-get($breakpoints, $breakpoints)} {
+        @content;
+    }
+}
+// メディアクエリ
+
+// 共通クラス
+
+body {
+    font-family: "ヒラギノ明朝 ProN", "Times New Roman";
+    font-size: 16px;
+    background-image: url("../img/background-img-01.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+p {
+    line-height: 1.75;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: content-box;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.titleBox {
+    text-align: center;
+    font-size: 30px;
+    color: $colorLetter;
+}
+ // 共通クラス
+
+//  header
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(32,33,36,0.9);
+
+    @include mq(sp) {
+        background-color: #fff;
+    }
+}
+
+.headerTop {
+    width: 100%;
+    height: 70%;
+    align-items: center;
+    display: flex;
+
+    .headerTopCenter {
+        width: 200px;
+        display: inline-block;
+        margin: 0 auto;
+
+    }
+
+    .headerTopRight {
+        position: absolute;
+        top: 56px;
+        right: 5%;
+
+        .bookBtn {
+            display: inline-block;
+            padding: 0.3em 1em;
+            font-weight: bold;
+            color: $colorLetter;
+            border: solid 2px $colorAccent;
+            transition: 1s;
+            text-align: center;
+            padding: 6px 12px;
+        }
+
+        .bookBtn:hover {
+            background-color: rgba(232,234,237,0.1);
+            font-weight: bold;
+        }
+
+    }
+
+    .hamburgerMenu {
+        height: 20px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 30px;
+        z-index: 99;
+    }
+    .menuLine {
+        background: #fff;
+        display: block;
+        height: 2px;
+        position: absolute;
+        transition:transform .3s;
+        width: 100%;
+    }
+    .menuLineCenter {
+        top: 9px;
+    }
+    .menuLineBottom {
+        bottom: 0;
+    }
+    .menuLineTop.active{
+        top: 8px;
+        transform: rotate(45deg);
+    }
+    .menuLineCenter.active{
+        transform:scaleX(0);
+    }
+    .menuLineBottom.active{
+        bottom: 10px;
+        transform: rotate(135deg);
+    }
+
+    
+}
+
+.headerBottom {
+    width: 100%;
+    height: 30%;
+
+    @include mq(sp) {
+        display: none;
+    }
+
+    .headerNav {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        margin: 0;
+        padding: 6px;
+
+        li {
+            padding-bottom: 5px;
+
+            a {
+                font-size: 20px;
+                font-weight: bold;
+                color: $colorLetter;
+                padding: 6px;
+                opacity: 0.7;
+            }
+        }
+
+        li:hover {
+            border-bottom: 1px solid $colorAccent;
+            transition: border-bottom 1s;
+            
+            a:hover {
+                opacity: 1;
+                transition: opacity 1s;
+            }
+        }
+    }
+}
+
+//  header
+
+// mainVisual
+
+#topImg {
+    width: 100%;
+    margin-top: 200px;
+}
+// mainVisual
+
+// about
+.about {
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(32,33,36,1), rgba(32,33,36,0.7) 50%, rgba(32,33,36,1)) ;
+}
+
+.aboutTitle {
+    width: 200px;
+    height: 36px;
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorAccent;
+}
+
+// concept
+
+.concept {
+    width: 100%;
+}
+
+.conceptTitle {
+    width: 160px;
+    height: 40px;
+    font-size:30px;
+    color: $colorAccent;
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorLetter;
+}
+
+.conceptCard {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+
+    .conceptCardBox {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+
+        .conceptImgBox  {
+            position: relative;
+            width: 60%;
+        }
+        .conceptImgBox:after {
+          position: absolute;
+          border: 1px solid  $colorLetter;
+          opacity: 0.5;
+          top:20px;
+          left:20px;
+          content:"";
+          height:100%;
+          width:100%;
+        }
+        
+
+        .conceptTextBox {
+            margin-left: 40px;
+            width: 40%;
+            
+
+            #conceptSubTitle {
+                font-size: 18px;
+                color: $colorAccent;
+            }
+
+            #conceptText {
+                color: $colorLetter;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+// concept
+
+// owner
+
+.owner {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.ownerTitle {
+    width: 160px;
+    height: 40px;
+    font-size:30px;
+    color: $colorAccent;
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorLetter;
+}
+
+
+
+.ownerCard {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+
+    .ownerCardBox {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        width: 100%;
+
+        .ownerImgBox  {
+            position: relative;
+            width: 60%;
+            order: 1;
+            margin-left: 40px;
+        }
+        .ownerImgBox:after {
+          position: absolute;
+          border: 1px solid  $colorLetter;
+          opacity: 0.5;
+          top:-20px;
+          left:-20px;
+          content:"";
+          height:100%;
+          width:100%;
+        }
+        
+
+        .ownerTextBox {
+            width: 40%;
+            
+
+            #ownerSubTitle {
+                font-size: 18px;
+                color: $colorAccent;
+            }
+
+            #ownerText {
+                color: $colorLetter;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+// owner
+
+// shop
+.shop {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.shopTitle {
+    width: 160px;
+    height: 40px;
+    font-size:30px;
+    color: $colorAccent;
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorLetter;
+}
+
+
+.shopCard {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+
+    .shopCardBox {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .shopImgBox  {
+            position: relative;
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid rgba(232,234,237,0.5);
+        }
+        
+        .shopTextBox {
+            width: 40%;
+            margin: 40px auto 0 auto;
+
+            #shopSubTitle {
+                font-size: 18px;
+                color: $colorAccent;
+                text-align: center;
+            }
+
+            #shopText {
+                color: $colorLetter;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+// shop
+
+// about
+
+
+// location
+.location {
+    background: $colorBase;
+    width: 100%;
+    height: 600px;
+}
+
+.locationTitle {
+    width: 200px;
+    height: 36px;
+    display: inline-block;
+    margin-top: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorAccent;
+}
+
+.locationInfoBox {
+    width: 100%;
+    height: 240px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.locationInfo {
+    width: 60%;
+    height: 100%;
+    border: 1px solid rgba(232,234,237,0.5);
+    margin: auto;
+}
+
+.locationInfoLeft {
+    color: $colorLetter;
+    width: 50%;
+    height: 100%;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .locationInfoLeftText {
+        padding: 10px;
+
+        p {
+            line-height: 2.4;
+        }
+    }
+}
+
+.locationMapBox {
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+
+    .locationMap {
+        -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+    }
+
+    .locationMap:hover {
+        transition: filter 1s ease;
+      -webkit-filter: grayscale(0) saturate(2);
+      filter: grayscale(0) saturate(2);
+    }
+}
+
+
+// location
+
+// services
+
+.services {
+    background: $colorBase;
+    width: 100%;
+}
+
+.servicesTitle {
+    width: 200px;
+    height: 36px;
+    display: inline-block;
+    margin-top: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorAccent;
+}
+
+.servicesPriceBox {
+    margin-top: 40px;
+    width: 100%;
+    border: 1px solid rgba(232,234,237,0.5);
+}
+
+.servicesPrice {
+    margin: 80px auto;
+}
+
+.servicesPriceItem {
+    width: 60%;
+    margin: 0 auto 50px;
+    color: $colorLetter;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(232,234,237,0.5);
+
+    .servicesPriceItemLeft, .servicesPriceItemRight {
+        flex: 0 1 auto;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.servicesAddItems {
+    width: 100%;
+    margin-top: 20px;
+
+    p {
+        color: $colorLetter;
+        font-size: 12px;
+    }
+}
+// services
+
+// news
+.news {
+    background: $colorBase;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.newsTitle {
+    width: 200px;
+    height: 36px;
+    display: inline-block;
+    margin-top: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorAccent;
+}
+
+.newsList {
+    margin: 40px auto 0;
+    width: 60%;
+    border: 1px solid rgba(232,234,237,0.5);
+    padding: 40px 60px;
+
+    ul {
+        width: 80%;
+        
+    }
+
+    li {
+        color: $colorLetter;
+        line-height: 3.6;
+    }
+
+    a {
+        display: flex;
+
+        .date {
+            margin-right: 20px;
+        }
+    }
+
+    .newsBtnBox {
+        text-align: center;
+        margin-top: 20px;
+
+        .newsBtn {
+            display: inline-block;
+            padding: 0.3em 1em;
+            font-weight: bold;
+            color: $colorLetter;
+            border: solid 1px $colorAccent;
+            transition: 1s;
+            text-align: center;
+            padding: 6px 12px;
+        }
+        
+        .newsBtn:hover {
+            background-color: rgba(232,234,237,0.1);
+            font-weight: bold;
+        }
+    }
+}
+
+
+// news
+
+
+// booking
+.booking {
+    background: linear-gradient(to bottom, rgba(32,33,36,1), rgba(32,33,36,0.7) 50%, rgba(32,33,36,1)) ;
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+.bookingTitle {
+    width: 200px;
+    height: 36px;
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorAccent;
+}
+
+.bookingBox {
+    width: 100%;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: space-between;
+
+    .bookingBtnBox {
+        text-align: center;
+        margin-top: 20px;
+
+        .bookingBtn {
+            width: 300px;
+            height: 60px;
+            line-height: 60px;
+            display: inline-block;
+            font-size: 20px;
+            color: $colorLetter;
+            border: solid 2px $colorAccent;
+            transition: 1s;
+        }
+        
+        .bookingBtn:hover {
+            background-color: rgba(232,234,237,0.1);
+        }
+    }
+}
+// booking
+
+// contact
+.contact {
+    background: $colorBase;
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+.contactTitle {
+    width: 200px;
+    height: 36px;
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $colorAccent;
+}
+
+.contactBox {
+    margin: 40px auto 0;
+    width: 60%;
+    border: 1px solid rgba(232,234,237,0.5);
+    padding-bottom: 100px;
+}
+
+.inputBox {
+    width: 80%;
+    margin: 40px auto ;
+    border-bottom: 1px solid rgba(232,234,237,0.5);
+
+    ::placeholder {
+        color: $colorLetter;
+    }
+}
+// contact
+
+
+// footer
+.footer {
+    width: 100%;
+    height: 200px;
+    background-color: $colorMain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.copyrightBox {
+    height: 100%;
+    display: table;
+
+    .copyright {
+        color: $colorLetter;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.instaIcon {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+
+    img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+// footer
+
+
+
+
