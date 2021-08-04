@@ -8,6 +8,12 @@ body {
   overflow-x: hidden;
 }
 
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 12px;
+  }
+}
+
 p {
   line-height: 1.75;
 }
@@ -19,7 +25,12 @@ p {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   height: 100%;
-  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
 }
 
 img {
@@ -34,14 +45,19 @@ img {
 }
 
 .header {
-  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 9999;
   width: 100%;
   height: 200px;
   background-color: rgba(32, 33, 36, 0.9);
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    height: 80px;
+  }
 }
 
 .headerTop {
@@ -53,6 +69,19 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .headerTop {
+    height: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+  }
 }
 
 .headerTop .headerTopCenter {
@@ -61,13 +90,13 @@ img {
   margin: 0 auto;
 }
 
-.headerTop .headerTopRight {
-  position: absolute;
-  top: 56px;
-  right: 5%;
+@media screen and (max-width: 767px) {
+  .headerTop .headerTopCenter {
+    width: 100px;
+  }
 }
 
-.headerTop .headerTopRight .bookBtn {
+.headerTop .headerTopBtn .bookBtn {
   display: inline-block;
   padding: 0.3em 1em;
   font-weight: bold;
@@ -79,60 +108,126 @@ img {
   padding: 6px 12px;
 }
 
-.headerTop .headerTopRight .bookBtn:hover {
+@media screen and (max-width: 767px) {
+  .headerTop .headerTopBtn .bookBtn {
+    font-weight: normal;
+  }
+}
+
+.headerTop .headerTopBtn .bookBtn:hover {
   background-color: rgba(232, 234, 237, 0.1);
   font-weight: bold;
 }
 
-.headerTop .hamburgerMenu {
-  height: 20px;
+@media screen and (max-width: 767px) {
+  .headerTop .headerTopBtn .bookBtn:hover {
+    font-weight: normal;
+  }
+}
+
+.headerTop .dummyBox {
+  display: inline-block;
+  width: 10%;
+}
+
+.headerTopMenu .menu {
   position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 30px;
+  top: 28px;
+  right: 5%;
+  width: 36px;
+  height: 24px;
   z-index: 99;
 }
 
-.headerTop .menuLine {
-  background: #fff;
+.headerTopMenu .menu .menu__line {
+  background: #e8eaed;
   display: block;
   height: 2px;
   position: absolute;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
   width: 100%;
 }
 
-.headerTop .menuLineCenter {
-  top: 9px;
+.headerTopMenu .menu .menu__line--center {
+  top: 11px;
 }
 
-.headerTop .menuLineBottom {
+.headerTopMenu .menu .menu__line--bottom {
   bottom: 0;
 }
 
-.headerTop .menuLineTop.active {
-  top: 8px;
+.headerTopMenu .menu .menu__line--top.active {
+  top: 10px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.headerTop .menuLineCenter.active {
+.headerTopMenu .menu .menu__line--center.active {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
 }
 
-.headerTop .menuLineBottom.active {
-  bottom: 10px;
+.headerTopMenu .menu .menu__line--bottom.active {
+  bottom: 12px;
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
+}
+
+.headerTopMenu .gnav {
+  background: #1C1D1F;
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 98;
+}
+
+.headerTopMenu .gnav__wrap {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+.headerTopMenu .gnav__menu__item {
+  margin: 40px 0;
+}
+
+.headerTopMenu .gnav__menu__item a {
+  color: #e8eaed;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 40px;
+  text-decoration: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.headerTopMenu .gnav__menu__item a:hover {
+  color: #666;
 }
 
 .headerBottom {
   width: 100%;
   height: 30%;
+}
+
+@media screen and (max-width: 767px) {
+  .headerBottom {
+    display: none;
+  }
 }
 
 .headerBottom .headerNav {
@@ -176,13 +271,12 @@ img {
 
 #topImg {
   width: 100%;
-  margin-top: 200px;
 }
 
 .about {
   width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#202124), color-stop(50%, rgba(32, 33, 36, 0.7)), to(#202124));
-  background: linear-gradient(to bottom, #202124, rgba(32, 33, 36, 0.7) 50%, #202124);
+  background: -webkit-gradient(linear, left top, left bottom, from(#202124), color-stop(20%, rgba(32, 33, 36, 0.7)), to(#202124));
+  background: linear-gradient(to bottom, #202124, rgba(32, 33, 36, 0.7) 20%, #202124);
 }
 
 .aboutTitle {
@@ -227,9 +321,51 @@ img {
   width: 100%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .conceptCard .conceptCardBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .conceptCard .conceptCardBox .conceptImgBox {
   position: relative;
   width: 60%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .conceptCard .conceptCardBox .conceptImgBox {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox .conceptImgBox {
+    width: 100%;
+  }
 }
 
 .conceptCard .conceptCardBox .conceptImgBox:after {
@@ -248,19 +384,40 @@ img {
   width: 40%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .conceptCard .conceptCardBox .conceptTextBox {
+    width: 80%;
+    margin: 80px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox .conceptTextBox {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
 .conceptCard .conceptCardBox .conceptTextBox #conceptSubTitle {
   font-size: 18px;
   color: #F3A70D;
+  text-align: center;
 }
 
 .conceptCard .conceptCardBox .conceptTextBox #conceptText {
   color: #e8eaed;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .owner {
   width: 100%;
   margin-top: 80px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .owner {
+    margin-top: 40px;
+  }
 }
 
 .ownerTitle {
@@ -295,6 +452,36 @@ img {
   width: 100%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .ownerCard .ownerCardBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .ownerCard .ownerCardBox .ownerImgBox {
   position: relative;
   width: 60%;
@@ -302,6 +489,18 @@ img {
       -ms-flex-order: 1;
           order: 1;
   margin-left: 40px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .ownerCard .ownerCardBox .ownerImgBox {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox .ownerImgBox {
+    width: 100%;
+  }
 }
 
 .ownerCard .ownerCardBox .ownerImgBox:after {
@@ -319,19 +518,40 @@ img {
   width: 40%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .ownerCard .ownerCardBox .ownerTextBox {
+    width: 80%;
+    margin: 40px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox .ownerTextBox {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
 .ownerCard .ownerCardBox .ownerTextBox #ownerSubTitle {
   font-size: 18px;
   color: #F3A70D;
+  text-align: center;
 }
 
 .ownerCard .ownerCardBox .ownerTextBox #ownerText {
   color: #e8eaed;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .shop {
   width: 100%;
   margin-top: 80px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .shop {
+    margin-top: 40px;
+  }
 }
 
 .shopTitle {
@@ -371,9 +591,34 @@ img {
   border: 1px solid rgba(232, 234, 237, 0.5);
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .shopCard .shopCardBox .shopImgBox {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .shopCard .shopCardBox .shopImgBox {
+    width: 100%;
+  }
+}
+
 .shopCard .shopCardBox .shopTextBox {
   width: 40%;
   margin: 40px auto 0 auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .shopCard .shopCardBox .shopTextBox {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .shopCard .shopCardBox .shopTextBox {
+    width: 100%;
+    margin-top: 40px;
+  }
 }
 
 .shopCard .shopCardBox .shopTextBox #shopSubTitle {
@@ -384,7 +629,7 @@ img {
 
 .shopCard .shopCardBox .shopTextBox #shopText {
   color: #e8eaed;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .location {
