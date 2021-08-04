@@ -99,13 +99,24 @@ img {
         display: inline-block;
         margin: 0 auto;
 
+        @include mq(tab) {
+            width: 150px;
+        }
+
         @include mq(sp) {
             width: 100px;
+            width: 33.3%;
         }
 
     }
 
     .headerTopBtn {
+        width: 33.3%;
+        text-align: right;
+
+        @include mq(sp) {
+            text-align-last: left;
+        }
 
         .bookBtn {
             display: inline-block;
@@ -114,7 +125,6 @@ img {
             color: $colorLetter;
             border: solid 2px $colorAccent;
             transition: 1s;
-            text-align: center;
             padding: 6px 12px;
 
             @include mq(sp) {
@@ -135,19 +145,26 @@ img {
 
     .dummyBox {
         display: inline-block;
-        width: 10%;
+        width: 33.3%;
     }
 }
 
 // ハンバーガーメニュー
 .headerTopMenu {
+
+    @include mq(pc) {
+        display: none;
+    }
     
+    @include mq(tab) {
+        display: none;
+    }
 
     .menu{
         position: absolute;
         top: 28px;
         right: 5%;
-        width: 36px;
+        width: 30px;
         height: 24px;
         z-index: 99;
     
@@ -204,10 +221,10 @@ img {
         font-weight: bold;
         padding: 40px;
         text-decoration: none;
-        transition: .5s;
+        transition: 1s;
     }
     .gnav__menu__item a:hover{
-        color: #666;
+        color: $colorAccent;
     }
 }
 // ハンバーガーメニュー
@@ -577,6 +594,18 @@ img {
     height: 240px;
     margin-top: 40px;
     position: relative;
+
+    @include mq(tab) {
+        display: flex;
+        flex-flow: column;
+        position: static;
+    }
+
+    @include mq(sp) {
+        display: flex;
+        flex-flow: column;
+        position: static;
+    }
 }
 
 .locationInfo {
@@ -584,6 +613,14 @@ img {
     height: 100%;
     border: 1px solid rgba(232,234,237,0.5);
     margin: auto;
+
+    @include mq(tab) {
+        width: 100%;
+    }
+
+    @include mq(sp) {
+        width: 100%;
+    }
 }
 
 .locationInfoLeft {
@@ -595,6 +632,14 @@ img {
     justify-content: center;
     align-items: center;
 
+    @include mq(tab) {
+        width: 100%;
+    }
+
+    @include mq(sp) {
+        width: 100%;
+    }
+
     .locationInfoLeftText {
         padding: 10px;
 
@@ -605,10 +650,22 @@ img {
 }
 
 .locationMapBox {
-    width: 100%;
+    width: 50%;
     position: absolute;
     top: 20%;
     left: 50%;
+
+    @include mq(tab) {
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+    }
+
+    @include mq(sp) {
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+    }
 
     .locationMap {
         -webkit-filter: grayscale(1);
@@ -774,6 +831,14 @@ img {
     margin: 40px auto 0;
     display: flex;
     justify-content: space-between;
+
+    @include mq(tab) {
+        flex-flow: column;
+    }
+
+    @include mq(sp) {
+        flex-flow: column;
+    }
 
     .bookingBtnBox {
         text-align: center;
