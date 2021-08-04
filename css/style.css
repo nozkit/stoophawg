@@ -90,9 +90,27 @@ img {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .headerTop .headerTopCenter {
+    width: 150px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .headerTop .headerTopCenter {
     width: 100px;
+    width: 33.3%;
+  }
+}
+
+.headerTop .headerTopBtn {
+  width: 33.3%;
+  text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+  .headerTop .headerTopBtn {
+    text-align-last: left;
   }
 }
 
@@ -104,7 +122,6 @@ img {
   border: solid 2px #F3A70D;
   -webkit-transition: 1s;
   transition: 1s;
-  text-align: center;
   padding: 6px 12px;
 }
 
@@ -127,14 +144,26 @@ img {
 
 .headerTop .dummyBox {
   display: inline-block;
-  width: 10%;
+  width: 33.3%;
+}
+
+@media screen and (min-width: 1080px) {
+  .headerTopMenu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .headerTopMenu {
+    display: none;
+  }
 }
 
 .headerTopMenu .menu {
   position: absolute;
   top: 28px;
   right: 5%;
-  width: 36px;
+  width: 30px;
   height: 24px;
   z-index: 99;
 }
@@ -211,12 +240,12 @@ img {
   font-weight: bold;
   padding: 40px;
   text-decoration: none;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .headerTopMenu .gnav__menu__item a:hover {
-  color: #666;
+  color: #F3A70D;
 }
 
 .headerBottom {
@@ -655,11 +684,49 @@ img {
   position: relative;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .locationInfoBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    position: static;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .locationInfoBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    position: static;
+  }
+}
+
 .locationInfo {
   width: 60%;
   height: 100%;
   border: 1px solid rgba(232, 234, 237, 0.5);
   margin: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .locationInfo {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .locationInfo {
+    width: 100%;
+  }
 }
 
 .locationInfoLeft {
@@ -678,6 +745,18 @@ img {
           align-items: center;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .locationInfoLeft {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .locationInfoLeft {
+    width: 100%;
+  }
+}
+
 .locationInfoLeft .locationInfoLeftText {
   padding: 10px;
 }
@@ -687,10 +766,26 @@ img {
 }
 
 .locationMapBox {
-  width: 100%;
+  width: 50%;
   position: absolute;
   top: 20%;
   left: 50%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .locationMapBox {
+    width: 100%;
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .locationMapBox {
+    width: 100%;
+    position: static;
+    margin-top: 20px;
+  }
 }
 
 .locationMapBox .locationMap {
@@ -863,6 +958,24 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .bookingBox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .bookingBox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
 }
 
 .bookingBox .bookingBtnBox {
