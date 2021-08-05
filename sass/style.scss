@@ -37,11 +37,14 @@ body {
 
     @include mq(sp) {
         font-size: 12px;
+        font-weight: 200;
+        letter-spacing: 0.05em;
+        line-height: 1.75;
     }
 }
 
 p {
-    line-height: 1.75;
+    line-height: 2;
 }
 
 .container {
@@ -273,9 +276,10 @@ img {
 //  header
 
 // mainVisual
-
 #topImg {
-    width: 100%;
+    width: 700;
+    height: 100%;
+    object-fit: cover;
 }
 // mainVisual
 
