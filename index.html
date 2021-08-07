@@ -1,318 +1,1089 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stoop Hawg BARBER SHOP</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/js/script.js"></script>
-</head>
-<body>
+@charset "UTF-8";
+body {
+  font-family: "ヒラギノ明朝 ProN", "Times New Roman";
+  font-size: 16px;
+  background-image: url("../img/background-img-01.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
 
-    <!-- header -->
-    <header class="header">
-        <div class="container">
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 12px;
+    font-weight: 200;
+    letter-spacing: 0.05em;
+    line-height: 1.75;
+  }
+}
 
-            <div class="headerTopMenu">
-                <a class="menu">
-                    <span class="menu__line menu__line--top"></span>
-                    <span class="menu__line menu__line--center"></span>
-                    <span class="menu__line menu__line--bottom"></span>
-                </a>
-                <nav class="gnav">
-                    <div class="gnav__wrap">
-                        <ul class="gnav__menu">
-                            <li class="gnav__menu__item"><a href="">About</a></li>
-                            <li class="gnav__menu__item"><a href="">Services</a></li>
-                            <li class="gnav__menu__item"><a href="">Location</a></li>
-                            <li class="gnav__menu__item"><a href="">News</a></li>
-                            <li class="gnav__menu__item"><a href="">Booking</a></li>
-                            <li class="gnav__menu__item"><a href="">Online Shop</a></li>
-                        </ul>
-                    </div><!--gnav-wrap-->
-                </nav>
-            </div>
+p {
+  line-height: 2;
+}
 
-            <div class="headerTop">
-                <span class="dummyBox"></span>
-                <div class="headerTopCenter">
-                    <a class="headerLogo" href="/"><img src="img/stoophawgPlateLogoWhite.svg" alt=""></a>
-                </div>
-                <div class="headerTopBtn">
-                    <a href="#" class="btn bookBtn">Book Now</a>
-                </div>
-            </div>
-            
-            <div class="headerBottom">
-                <ul class="headerNav">
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Location</a></li>
-                    <li><a href="">News</a></li>
-                    <li><a href="">Booking</a></li>
-                    <li><a href="">Online Shop</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <!-- header -->
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 100%;
+}
 
-    <!-- mainVisual -->
-    <section class="top">
-         <img id="topImg" src="img\Topカバー画像.jpg" alt="">
-    </section>
-    <!-- mainVisual -->
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+}
 
-    <!-- about -->
-    <section class="about">
-        <div class="container">
-            <div class="titleBox aboutTitleBox">
-                <h2 class="aboutTitle">About</h2>
-            </div>
+img {
+  width: 100%;
+  height: auto;
+}
 
-            <!-- concept -->
-            <div class="concept">
-                <div class="div titleBox conceptTitleBox">
-                    <h3 class="conceptTitle">1.Concept</h3>
-                </div>
-                <div class="card conceptCard">
-                    <div class="cardBox conceptCardBox">
-                        <div class="aboutImgBox conceptImgBox">
-                            <img class="conceptImg" src="./img/testImg.jpg" alt="">
-                        </div>
-                        <div class="aboutTextBox conceptTextBox">
-                            <h4 id="conceptSubTitle">For Your Lifestyle</h4>
-                            <p id="conceptText">「ひとりひとりのライフスタイルに合ったヘアスタイル」を提供するため、湘南・辻堂にてStoop Hawgは開業いたしました。
-                            <br> <br> 男性限定のサロンにて上質な時間をお過ごしいただきたく、シェイビングやヘッドスパなどのグルーミングメニューも取り揃えております。
-                            <br>"何故かいつもかっこいい"　"小さなこだわりで大きな変化"　細部までこだわり抜いたカットを是非体感してください。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- concept -->
+.titleBox {
+  text-align: center;
+  font-size: 30px;
+  color: #e8eaed;
+}
 
-            <!-- owner -->
-            <div class="owner">
-                <div class="div titleBox ownerTitleBox">
-                    <h3 class="ownerTitle">2.owner</h3>
-                </div>
-                <div class="card ownerCard">
-                    <div class="cardBox ownerCardBox">
-                        <div class="aboutImgBox ownerImgBox">
-                            <img class="ownertImg" src="./img/testImg.jpg" alt="">
-                        </div>
-                        <div class="aboutTextBox ownerTextBox">
-                            <h4 id="ownerSubTitle">Kosuke Suzuki</h4>
-                            <p id="ownerText">1994年、鎌倉生まれ。<br>
-                                理容専門学校を卒業後、東京の有名店 "THE BARBER TOKYO" へ入社。<br>
-                                その後同店がパートナーシップを結ぶ銀座 "dunhill barber" にてチーフに就任。<br>
-                                自分のスタイルを追及するため2021年 "STOOP HAWG BARBER SHOP" を開業。<br>
-                                <br>
-                                サーフィンやモーターサイクルなどの趣味での経験を活かし、サーフィン中の濡れた状態、海あがりやヘルメットを外した後のノーセットの状態も意識してカットさせていただきます。<br>
-                                <br>
-                                「自分に似合う髪型がわからない」「普段のセットがうまくいかない」などのお悩みにも一人ひとり丁寧なカウンセリングのもとオーダーメイドのカットをさせていただきます。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- owner -->
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(32, 33, 36, 0.9);
+}
 
-            <!-- shop -->
-            <div class="shop">
-                <div class="div titleBox shopTitleBox">
-                    <h3 class="shopTitle">3.Shop</h3>
-                </div>
-                <div class="card shopCard">
-                    <div class="cardBox shopCardBox">
-                        <div class="aboutImgBox shopImgBox">
-                            <img class="shopImg" src="./img/testImg.jpg" alt="">
-                        </div>
-                        <div class="aboutTextBox shopTextBox">
-                            <h4 id="shopSubTitle">For Your Lifestyle</h4>
-                            <p id="shopText">「ひとりひとりのライフスタイルに合ったヘアスタイル」を提供するため、湘南・辻堂にてStoop Hawgは開業いたしました。
-                            <br>男性限定のサロンにて上質な時間をお過ごしいただきたく、シェイビングやヘッドスパなどのグルーミングメニューも取り揃えております。
-                            <br>"何故かいつもかっこいい"　"小さなこだわりで大きな変化"　細部までこだわり抜いたカットを是非体感してください。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- shop -->
+@media screen and (max-width: 767px) {
+  .header {
+    height: 80px;
+  }
+}
 
-        </div>
-    </section>
-    <!-- about -->
+.headerTop {
+  width: 100%;
+  height: 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 
-    <!-- location -->
-    <section class="location">
-        <div class="container">
-            <div class="titleBox locationTitleBox">
-                <h2 class="locationTitle">Location</h2>
-            </div>
-            <div class="locationInfoBox">
-                <div class="locationInfo">
-                    <div class="locationInfoLeft">
-                        <div class="locationInfoLeftText">
-                            <p id="address">住所：神奈川県藤沢市辻堂1-9-3 1F</p>
-                            <p id="hour">営業時間：10:00 - 20:00</p>
-                            <p id="close">定休日：木曜日</p>
-                            <p id="phoneNumber">電話番号：0466-xx-xxxx</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="locationMapBox">
-                    <iframe class="locationMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.8016585192054!2d139.44954963158483!3d35.33574648712303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60184e010759d5c5%3A0xd7a2f0289577c4a1!2z44CSMjUxLTAwNDcg56We5aWI5bed55yM6Jek5rKi5biC6L675aCC77yR5LiB55uu77yZ4oiS77yTIDFm!5e0!3m2!1sja!2sjp!4v1626797648719!5m2!1sja!2sjp" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-    <!-- location -->
+@media screen and (max-width: 767px) {
+  .headerTop {
+    height: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+  }
+}
 
-    <!-- services -->
-    <section class="services">
-        <div class="container">
-            <div class="titleBox servicesTitleBox">
-                <h2 class="servicesTitle">Services</h2>
-            </div>
-            <div class="servicesPriceBox">
-                <div class="servicesPrice">
-                    <div class="servicesPriceItem">
-                        <h3 class="servicesPriceItemLeft">Cut & Shave</h3>
-                        <p class="servicesPriceItemRight">¥5,500</p>
-                    </div>
-                    <div class="servicesPriceItem">
-                        <h3 class="servicesPriceItemLeft">Permanent Wave</h3>
-                        <p class="servicesPriceItemRight">¥6,600~</p>
-                    </div>
-                    <div class="servicesPriceItem">
-                        <h3 class="servicesPriceItemLeft">Color</h3>
-                        <p class="servicesPriceItemRight">¥6,600~</p>
-                    </div>
-                    <div class="servicesPriceItem">
-                        <h3 class="servicesPriceItemLeft">Gray Color</h3>
-                        <p class="servicesPriceItemRight">¥2,750</p>
-                    </div>
-                    <div class="servicesPriceItem">
-                        <h3 class="servicesPriceItemLeft">Head Spa & Treatment</h3>
-                        <p class="servicesPriceItemRight">¥2,750</p>
-                    </div>
-                </div>
-            </div>
-            <div class="servicesAddItems">
-                <p>※表示料金は全て税込みです。</p>
-                <p>※シェイビング無しの場合は-¥500いたします。</p>
-            </div>
-        </div>
-    </section>
-    <!-- services -->
+.headerTop .headerTopCenter {
+  width: 200px;
+  display: inline-block;
+  margin: 0 auto;
+}
 
-    <!-- news -->
-    <section class="news">
-        <div class="container">
-            <div class="titleBox newsTitleBox">
-                <h2 class="newsTitle">News</h2>
-            </div>
-            <div class="newsBox">
-                <div class="newsList">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <div class="date">2021.07.26</div>
-                                <div class="ttl">お知らせタイトル</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="date">2021.07.26</div>
-                                <div class="ttl">お知らせタイトル</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="date">2021.07.26</div>
-                                <div class="ttl">お知らせタイトル</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="date">2021.07.26</div>
-                                <div class="ttl">お知らせタイトル</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="date">2021.07.26</div>
-                                <div class="ttl">お知らせタイトル</div>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="newsBtnBox">
-                        <a href="#" class="btn newsBtn">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- news -->
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .headerTop .headerTopCenter {
+    width: 150px;
+  }
+}
 
-    <!-- booking -->
-    <section class="booking">
-        <div class="container">
-            <div class="titleBox bookingTitleBox">
-                <h2 class="bookingTitle">Booking</h2>
-            </div>
-            <div class="bookingBox">
-                <div class="bookingBtnBox">
-                    <a href="#" class="btn bookingBtn">DM</a>
-                </div>
-                <div class="bookingBtnBox">
-                    <a href="#" class="btn bookingBtn">Web予約</a>
-                </div>
-                <div class="bookingBtnBox">
-                    <a href="#" class="btn bookingBtn">0466-xx-xxxx</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- booking -->
+@media screen and (max-width: 767px) {
+  .headerTop .headerTopCenter {
+    width: 100px;
+    width: 33.3%;
+  }
+}
 
-    <!-- contact -->
-    <section class="contact">
-        <div class="container">
-            <div class="titleBox contactTitleBox">
-                <h2 class="contactTitle">Contact</h2>
-            </div>
-            <div class="contactBox">
-                <div class="inputBox">
-                    <input type="text" class="contactFormInput inputName" placeholder="Name">
-                </div>
-                <div class="inputBox">
-                    <input type="text" class="contactFormInput inputMail" placeholder="E-mail">
-                </div>
-                <div class="inputBox">
-                    <input type="text" class="contactFormInput inputText" placeholder="Message">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- contact -->
+.headerTop .headerTopBtn {
+  width: 33.3%;
+  text-align: right;
+}
 
-    <!-- footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="copyrightBox">
-                <p class="copyright">© 2021 Stoop Hawg BARBER SHOP</p>
-            </div>
-            <a href="" class="instaIcon"><img src="img\Icon awesome-instagram.png" alt=""></a>
-        </div>
-    </footer>
-    <!-- footer -->
-    
-</body>
-</html>
+@media screen and (max-width: 767px) {
+  .headerTop .headerTopBtn {
+    text-align-last: left;
+  }
+}
+
+.headerTop .headerTopBtn .bookBtn {
+  display: inline-block;
+  padding: 0.3em 1em;
+  font-weight: bold;
+  color: #e8eaed;
+  border: solid 2px #F3A70D;
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding: 6px 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .headerTop .headerTopBtn .bookBtn {
+    font-weight: normal;
+  }
+}
+
+.headerTop .headerTopBtn .bookBtn:hover {
+  background-color: rgba(232, 234, 237, 0.1);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .headerTop .headerTopBtn .bookBtn:hover {
+    font-weight: normal;
+  }
+}
+
+.headerTop .dummyBox {
+  display: inline-block;
+  width: 33.3%;
+}
+
+@media screen and (min-width: 1080px) {
+  .headerTopMenu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .headerTopMenu {
+    display: none;
+  }
+}
+
+.headerTopMenu .menu {
+  position: absolute;
+  top: 28px;
+  right: 5%;
+  width: 30px;
+  height: 24px;
+  z-index: 99;
+}
+
+.headerTopMenu .menu .menu__line {
+  background: #e8eaed;
+  display: block;
+  height: 2px;
+  position: absolute;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  width: 100%;
+}
+
+.headerTopMenu .menu .menu__line--center {
+  top: 11px;
+}
+
+.headerTopMenu .menu .menu__line--bottom {
+  bottom: 0;
+}
+
+.headerTopMenu .menu .menu__line--top.active {
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.headerTopMenu .menu .menu__line--center.active {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.headerTopMenu .menu .menu__line--bottom.active {
+  bottom: 12px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.headerTopMenu .gnav {
+  background: #1C1D1F;
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 98;
+}
+
+.headerTopMenu .gnav__wrap {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+.headerTopMenu .gnav__menu__item {
+  margin: 40px 0;
+}
+
+.headerTopMenu .gnav__menu__item a {
+  color: #e8eaed;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 40px;
+  text-decoration: none;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.headerTopMenu .gnav__menu__item a:hover {
+  color: #F3A70D;
+}
+
+.headerBottom {
+  width: 100%;
+  height: 30%;
+}
+
+@media screen and (max-width: 767px) {
+  .headerBottom {
+    display: none;
+  }
+}
+
+.headerBottom .headerNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  padding: 6px;
+}
+
+.headerBottom .headerNav li {
+  padding-bottom: 5px;
+}
+
+.headerBottom .headerNav li a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e8eaed;
+  padding: 6px;
+  opacity: 0.7;
+}
+
+.headerBottom .headerNav li:hover {
+  border-bottom: 1px solid #F3A70D;
+  -webkit-transition: border-bottom 1s;
+  transition: border-bottom 1s;
+}
+
+.headerBottom .headerNav li:hover a:hover {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+#topImg {
+  width: 700;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#202124), color-stop(20%, rgba(32, 33, 36, 0.7)), to(#202124));
+  background: linear-gradient(to bottom, #202124, rgba(32, 33, 36, 0.7) 20%, #202124);
+}
+
+.aboutTitle {
+  width: 200px;
+  height: 36px;
+  display: inline-block;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #F3A70D;
+}
+
+.concept {
+  width: 100%;
+}
+
+.conceptTitle {
+  width: 160px;
+  height: 40px;
+  font-size: 30px;
+  color: #F3A70D;
+  display: inline-block;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.conceptCard {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.conceptCard .conceptCardBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .conceptCard .conceptCardBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.conceptCard .conceptCardBox .conceptImgBox {
+  position: relative;
+  width: 60%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .conceptCard .conceptCardBox .conceptImgBox {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox .conceptImgBox {
+    width: 100%;
+  }
+}
+
+.conceptCard .conceptCardBox .conceptImgBox:after {
+  position: absolute;
+  border: 1px solid #e8eaed;
+  opacity: 0.5;
+  top: 20px;
+  left: 20px;
+  content: "";
+  height: 100%;
+  width: 100%;
+}
+
+.conceptCard .conceptCardBox .conceptTextBox {
+  margin-left: 40px;
+  width: 40%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .conceptCard .conceptCardBox .conceptTextBox {
+    width: 80%;
+    margin: 80px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox .conceptTextBox {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.conceptCard .conceptCardBox .conceptTextBox #conceptSubTitle {
+  font-size: 18px;
+  color: #F3A70D;
+  text-align: center;
+}
+
+.conceptCard .conceptCardBox .conceptTextBox #conceptText {
+  color: #e8eaed;
+  margin-top: 40px;
+}
+
+.owner {
+  width: 100%;
+  margin-top: 80px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .owner {
+    margin-top: 40px;
+  }
+}
+
+.ownerTitle {
+  width: 160px;
+  height: 40px;
+  font-size: 30px;
+  color: #F3A70D;
+  display: inline-block;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.ownerCard {
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.ownerCard .ownerCardBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .ownerCard .ownerCardBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.ownerCard .ownerCardBox .ownerImgBox {
+  position: relative;
+  width: 60%;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-left: 40px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .ownerCard .ownerCardBox .ownerImgBox {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox .ownerImgBox {
+    width: 100%;
+  }
+}
+
+.ownerCard .ownerCardBox .ownerImgBox:after {
+  position: absolute;
+  border: 1px solid #e8eaed;
+  opacity: 0.5;
+  top: -20px;
+  left: -20px;
+  content: "";
+  height: 100%;
+  width: 100%;
+}
+
+.ownerCard .ownerCardBox .ownerTextBox {
+  width: 40%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .ownerCard .ownerCardBox .ownerTextBox {
+    width: 80%;
+    margin: 40px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox .ownerTextBox {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.ownerCard .ownerCardBox .ownerTextBox #ownerSubTitle {
+  font-size: 18px;
+  color: #F3A70D;
+  text-align: center;
+}
+
+.ownerCard .ownerCardBox .ownerTextBox #ownerText {
+  color: #e8eaed;
+  margin-top: 40px;
+}
+
+.shop {
+  width: 100%;
+  margin-top: 80px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .shop {
+    margin-top: 40px;
+  }
+}
+
+.shopTitle {
+  width: 160px;
+  height: 40px;
+  font-size: 30px;
+  color: #F3A70D;
+  display: inline-block;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.shopCard {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.shopCard .shopCardBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.shopCard .shopCardBox .shopImgBox {
+  position: relative;
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid rgba(232, 234, 237, 0.5);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .shopCard .shopCardBox .shopImgBox {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .shopCard .shopCardBox .shopImgBox {
+    width: 100%;
+  }
+}
+
+.shopCard .shopCardBox .shopTextBox {
+  width: 40%;
+  margin: 40px auto 0 auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .shopCard .shopCardBox .shopTextBox {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .shopCard .shopCardBox .shopTextBox {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.shopCard .shopCardBox .shopTextBox #shopSubTitle {
+  font-size: 18px;
+  color: #F3A70D;
+  text-align: center;
+}
+
+.shopCard .shopCardBox .shopTextBox #shopText {
+  color: #e8eaed;
+  margin-top: 40px;
+}
+
+.location {
+  background: #202124;
+  width: 100%;
+  height: 600px;
+}
+
+.locationTitle {
+  width: 200px;
+  height: 36px;
+  display: inline-block;
+  margin-top: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #F3A70D;
+}
+
+.locationInfoBox {
+  width: 100%;
+  height: 240px;
+  margin-top: 40px;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .locationInfoBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    position: static;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .locationInfoBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    position: static;
+  }
+}
+
+.locationInfo {
+  width: 60%;
+  height: 100%;
+  border: 1px solid rgba(232, 234, 237, 0.5);
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .locationInfo {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .locationInfo {
+    width: 100%;
+  }
+}
+
+.locationInfoLeft {
+  color: #e8eaed;
+  width: 50%;
+  height: 100%;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .locationInfoLeft {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .locationInfoLeft {
+    width: 100%;
+  }
+}
+
+.locationInfoLeft .locationInfoLeftText {
+  padding: 10px;
+}
+
+.locationInfoLeft .locationInfoLeftText p {
+  line-height: 2.4;
+}
+
+.locationMapBox {
+  width: 50%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .locationMapBox {
+    width: 100%;
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .locationMapBox {
+    width: 100%;
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+.locationMapBox .locationMap {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.locationMapBox .locationMap:hover {
+  -webkit-transition: -webkit-filter 1s ease;
+  transition: -webkit-filter 1s ease;
+  transition: filter 1s ease;
+  transition: filter 1s ease, -webkit-filter 1s ease;
+  -webkit-filter: grayscale(0) saturate(2);
+  filter: grayscale(0) saturate(2);
+}
+
+.services {
+  background: #202124;
+  width: 100%;
+}
+
+.servicesTitle {
+  width: 200px;
+  height: 36px;
+  display: inline-block;
+  margin-top: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #F3A70D;
+}
+
+.servicesPriceBox {
+  margin-top: 40px;
+  width: 100%;
+  border: 1px solid rgba(232, 234, 237, 0.5);
+}
+
+.servicesPrice {
+  margin: 80px auto;
+}
+
+.servicesPriceItem {
+  width: 60%;
+  margin: 0 auto 50px;
+  color: #e8eaed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(232, 234, 237, 0.5);
+}
+
+.servicesPriceItem .servicesPriceItemLeft, .servicesPriceItem .servicesPriceItemRight {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.servicesPriceItem h3 {
+  font-size: 20px;
+}
+
+.servicesPriceItem p {
+  font-size: 20px;
+}
+
+.servicesAddItems {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.servicesAddItems p {
+  color: #e8eaed;
+  font-size: 12px;
+}
+
+.news {
+  background: #202124;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.newsTitle {
+  width: 200px;
+  height: 36px;
+  display: inline-block;
+  margin-top: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #F3A70D;
+}
+
+.newsList {
+  margin: 40px auto 0;
+  width: 60%;
+  border: 1px solid rgba(232, 234, 237, 0.5);
+  padding: 40px 60px;
+}
+
+.newsList ul {
+  width: 80%;
+}
+
+.newsList li {
+  color: #e8eaed;
+  line-height: 3.6;
+}
+
+.newsList a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.newsList a .date {
+  margin-right: 20px;
+}
+
+.newsList .newsBtnBox {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.newsList .newsBtnBox .newsBtn {
+  display: inline-block;
+  padding: 0.3em 1em;
+  font-weight: bold;
+  color: #e8eaed;
+  border: solid 1px #F3A70D;
+  -webkit-transition: 1s;
+  transition: 1s;
+  text-align: center;
+  padding: 6px 12px;
+}
+
+.newsList .newsBtnBox .newsBtn:hover {
+  background-color: rgba(232, 234, 237, 0.1);
+  font-weight: bold;
+}
+
+.booking {
+  background: -webkit-gradient(linear, left top, left bottom, from(#202124), color-stop(50%, rgba(32, 33, 36, 0.7)), to(#202124));
+  background: linear-gradient(to bottom, #202124, rgba(32, 33, 36, 0.7) 50%, #202124);
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.bookingTitle {
+  width: 200px;
+  height: 36px;
+  display: inline-block;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #F3A70D;
+}
+
+.bookingBox {
+  width: 100%;
+  margin: 40px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .bookingBox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .bookingBox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+
+.bookingBox .bookingBtnBox {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bookingBox .bookingBtnBox .bookingBtn {
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+  font-size: 20px;
+  color: #e8eaed;
+  border: solid 2px #F3A70D;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.bookingBox .bookingBtnBox .bookingBtn:hover {
+  background-color: rgba(232, 234, 237, 0.1);
+}
+
+.contact {
+  background: #202124;
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.contactTitle {
+  width: 200px;
+  height: 36px;
+  display: inline-block;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #F3A70D;
+}
+
+.contactBox {
+  margin: 40px auto 0;
+  width: 60%;
+  border: 1px solid rgba(232, 234, 237, 0.5);
+  padding-bottom: 100px;
+}
+
+.inputBox {
+  width: 80%;
+  margin: 40px auto;
+  border-bottom: 1px solid rgba(232, 234, 237, 0.5);
+}
+
+.inputBox ::-webkit-input-placeholder {
+  color: #e8eaed;
+}
+
+.inputBox :-ms-input-placeholder {
+  color: #e8eaed;
+}
+
+.inputBox ::-ms-input-placeholder {
+  color: #e8eaed;
+}
+
+.inputBox ::placeholder {
+  color: #e8eaed;
+}
+
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: #1C1D1F;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.copyrightBox {
+  height: 100%;
+  display: table;
+}
+
+.copyrightBox .copyright {
+  color: #e8eaed;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.instaIcon {
+  position: absolute;
+  top: 45%;
+  right: 5%;
+}
+
+.instaIcon img {
+  width: 16px;
+  height: 16px;
+}
