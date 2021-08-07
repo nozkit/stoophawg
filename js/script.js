@@ -1,15 +1,6 @@
 $(function() {
 
 
-
-
-    // ハンバーガーメニュ
-    $('.menu').on('click',function(){
-        $('.menu__line').toggleClass('active');
-        $('.gnav').fadeToggle();
-    });
-    // ハンバーガーメニュ
-
     var winH = $(window ).height();
       $('.top').outerHeight($(window).height());    
       $(window).on('resize',function(){
