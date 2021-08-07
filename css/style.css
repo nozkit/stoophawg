@@ -80,10 +80,6 @@ img {
 @media screen and (max-width: 767px) {
   .headerTop {
     height: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-flow: row-reverse;
-            flex-flow: row-reverse;
   }
 }
 
@@ -102,7 +98,6 @@ img {
 @media screen and (max-width: 767px) {
   .headerTop .headerTopCenter {
     width: 100px;
-    width: 33.3%;
   }
 }
 
@@ -113,7 +108,9 @@ img {
 
 @media screen and (max-width: 767px) {
   .headerTop .headerTopBtn {
-    text-align-last: left;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 
@@ -125,12 +122,14 @@ img {
   border: solid 2px #F3A70D;
   -webkit-transition: 1s;
   transition: 1s;
-  padding: 6px 12px;
 }
 
 @media screen and (max-width: 767px) {
   .headerTop .headerTopBtn .bookBtn {
+    padding: 0.3em 0.5em;
+    font-size: 12px;
     font-weight: normal;
+    line-height: 1;
   }
 }
 
@@ -150,105 +149,12 @@ img {
   width: 33.3%;
 }
 
-@media screen and (min-width: 1080px) {
-  .headerTopMenu {
-    display: none;
+@media screen and (max-width: 767px) {
+  .headerTop .dummyBox {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1079px) {
-  .headerTopMenu {
-    display: none;
-  }
-}
-
-.headerTopMenu .menu {
-  position: absolute;
-  top: 28px;
-  right: 5%;
-  width: 30px;
-  height: 24px;
-  z-index: 99;
-}
-
-.headerTopMenu .menu .menu__line {
-  background: #e8eaed;
-  display: block;
-  height: 2px;
-  position: absolute;
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
-  width: 100%;
-}
-
-.headerTopMenu .menu .menu__line--center {
-  top: 11px;
-}
-
-.headerTopMenu .menu .menu__line--bottom {
-  bottom: 0;
-}
-
-.headerTopMenu .menu .menu__line--top.active {
-  top: 10px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.headerTopMenu .menu .menu__line--center.active {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-}
-
-.headerTopMenu .menu .menu__line--bottom.active {
-  bottom: 12px;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
-}
-
-.headerTopMenu .gnav {
-  background: #1C1D1F;
-  display: none;
-  height: 100%;
-  position: fixed;
-  width: 100%;
-  z-index: 98;
-}
-
-.headerTopMenu .gnav__wrap {
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  width: 100%;
-}
-
-.headerTopMenu .gnav__menu__item {
-  margin: 40px 0;
-}
-
-.headerTopMenu .gnav__menu__item a {
-  color: #e8eaed;
-  font-size: 2em;
-  font-weight: bold;
-  padding: 40px;
-  text-decoration: none;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-.headerTopMenu .gnav__menu__item a:hover {
-  color: #F3A70D;
 }
 
 .headerBottom {
@@ -318,10 +224,14 @@ img {
   width: 200px;
   height: 36px;
   display: inline-block;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 80px auto 0;
   border-bottom: 1px solid #F3A70D;
+}
+
+@media screen and (max-width: 767px) {
+  .aboutTitle {
+    margin: 40px auto 0;
+  }
 }
 
 .concept {
@@ -334,10 +244,14 @@ img {
   font-size: 30px;
   color: #F3A70D;
   display: inline-block;
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 100px auto 0;
   border-bottom: 1px solid #e8eaed;
+}
+
+@media screen and (max-width: 767px) {
+  .conceptTitle {
+    margin: 40px auto 0;
+  }
 }
 
 .conceptCard {
@@ -461,10 +375,14 @@ img {
   font-size: 30px;
   color: #F3A70D;
   display: inline-block;
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 100px auto 0;
   border-bottom: 1px solid #e8eaed;
+}
+
+@media screen and (max-width: 767px) {
+  .ownerTitle {
+    margin: 20px auto 0;
+  }
 }
 
 .ownerCard {
@@ -508,9 +426,9 @@ img {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -595,10 +513,14 @@ img {
   font-size: 30px;
   color: #F3A70D;
   display: inline-block;
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 100px auto 0;
   border-bottom: 1px solid #e8eaed;
+}
+
+@media screen and (max-width: 767px) {
+  .shopTitle {
+    margin: 20px auto 0;
+  }
 }
 
 .shopCard {
@@ -677,16 +599,20 @@ img {
   width: 200px;
   height: 36px;
   display: inline-block;
-  margin-top: 160px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 160px auto 0;
   border-bottom: 1px solid #F3A70D;
+}
+
+@media screen and (max-width: 767px) {
+  .locationTitle {
+    margin: 80px auto 0;
+  }
 }
 
 .locationInfoBox {
   width: 100%;
   height: 240px;
-  margin-top: 40px;
+  margin-top: 10px;
   position: relative;
 }
 
@@ -817,24 +743,40 @@ img {
   width: 200px;
   height: 36px;
   display: inline-block;
-  margin-top: 160px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 160px auto 0;
   border-bottom: 1px solid #F3A70D;
 }
 
+@media screen and (max-width: 767px) {
+  .servicesTitle {
+    margin: 80px auto 0;
+  }
+}
+
 .servicesPriceBox {
-  margin-top: 40px;
-  width: 100%;
+  margin: 10px auto 0;
+  width: 80%;
   border: 1px solid rgba(232, 234, 237, 0.5);
+}
+
+@media screen and (max-width: 767px) {
+  .servicesPriceBox {
+    width: 100%;
+  }
 }
 
 .servicesPrice {
   margin: 80px auto;
 }
 
+@media screen and (max-width: 767px) {
+  .servicesPrice {
+    margin: 40px auto;
+  }
+}
+
 .servicesPriceItem {
-  width: 60%;
+  width: 80%;
   margin: 0 auto 50px;
   color: #e8eaed;
   display: -webkit-box;
@@ -850,6 +792,12 @@ img {
   border-bottom: 1px solid rgba(232, 234, 237, 0.5);
 }
 
+@media screen and (max-width: 767px) {
+  .servicesPriceItem {
+    width: 80%;
+  }
+}
+
 .servicesPriceItem .servicesPriceItemLeft, .servicesPriceItem .servicesPriceItemRight {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
@@ -860,8 +808,20 @@ img {
   font-size: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  .servicesPriceItem h3 {
+    font-size: 14px;
+  }
+}
+
 .servicesPriceItem p {
   font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .servicesPriceItem p {
+    font-size: 14px;
+  }
 }
 
 .servicesAddItems {
@@ -869,41 +829,76 @@ img {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  .servicesAddItems {
+    margin-top: 10px;
+  }
+}
+
 .servicesAddItems p {
   color: #e8eaed;
   font-size: 12px;
 }
 
+@media screen and (max-width: 767px) {
+  .servicesAddItems p {
+    font-size: 10px;
+  }
+}
+
 .news {
   background: #202124;
   width: 100%;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  .news {
+    padding-bottom: 40px;
+  }
 }
 
 .newsTitle {
   width: 200px;
   height: 36px;
   display: inline-block;
-  margin-top: 160px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 160px auto 0;
   border-bottom: 1px solid #F3A70D;
 }
 
+@media screen and (max-width: 767px) {
+  .newsTitle {
+    margin: 80px auto 0;
+  }
+}
+
 .newsList {
-  margin: 40px auto 0;
-  width: 60%;
+  margin: 10px auto 0;
+  width: 80%;
   border: 1px solid rgba(232, 234, 237, 0.5);
   padding: 40px 60px;
 }
 
+@media screen and (max-width: 767px) {
+  .newsList {
+    width: 100%;
+    padding: 5%;
+  }
+}
+
 .newsList ul {
-  width: 80%;
+  margin: auto;
 }
 
 .newsList li {
   color: #e8eaed;
-  line-height: 3.6;
+  margin: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .newsList li {
+    margin: 20px;
+  }
 }
 
 .newsList a {
@@ -926,11 +921,19 @@ img {
   padding: 0.3em 1em;
   font-weight: bold;
   color: #e8eaed;
-  border: solid 1px #F3A70D;
+  border: solid 2px #F3A70D;
   -webkit-transition: 1s;
   transition: 1s;
   text-align: center;
-  padding: 6px 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .newsList .newsBtnBox .newsBtn {
+    padding: 0.3em 0.5em;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+  }
 }
 
 .newsList .newsBtnBox .newsBtn:hover {
@@ -942,22 +945,26 @@ img {
   background: -webkit-gradient(linear, left top, left bottom, from(#202124), color-stop(50%, rgba(32, 33, 36, 0.7)), to(#202124));
   background: linear-gradient(to bottom, #202124, rgba(32, 33, 36, 0.7) 50%, #202124);
   width: 100%;
-  padding-bottom: 80px;
+  padding: 80px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .booking {
+    padding: 40px 0;
+  }
 }
 
 .bookingTitle {
   width: 200px;
   height: 36px;
   display: inline-block;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   border-bottom: 1px solid #F3A70D;
 }
 
 .bookingBox {
   width: 100%;
-  margin: 40px auto 0;
+  margin: 60px auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -981,12 +988,18 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
             flex-flow: column;
+    margin: 0 auto;
   }
 }
 
 .bookingBox .bookingBtnBox {
   text-align: center;
-  margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .bookingBox .bookingBtnBox {
+    margin-top: 20px;
+  }
 }
 
 .bookingBox .bookingBtnBox .bookingBtn {
@@ -1015,17 +1028,27 @@ img {
   width: 200px;
   height: 36px;
   display: inline-block;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 80px auto 0;
   border-bottom: 1px solid #F3A70D;
 }
 
+@media screen and (max-width: 767px) {
+  .contactTitle {
+    margin: 40px auto 0;
+  }
+}
+
 .contactBox {
-  margin: 40px auto 0;
+  margin: 10px auto 0;
   width: 60%;
   border: 1px solid rgba(232, 234, 237, 0.5);
   padding-bottom: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .contactBox {
+    width: 100%;
+  }
 }
 
 .inputBox {
@@ -1066,6 +1089,13 @@ img {
   position: relative;
 }
 
+@media screen and (max-width: 767px) {
+  .footer {
+    height: 100px;
+    font-size: 10px;
+  }
+}
+
 .copyrightBox {
   height: 100%;
   display: table;
@@ -1083,7 +1113,20 @@ img {
   right: 5%;
 }
 
+@media screen and (max-width: 767px) {
+  .instaIcon {
+    top: 38%;
+  }
+}
+
 .instaIcon img {
   width: 16px;
   height: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .instaIcon img {
+    width: 12px;
+    height: 12px;
+  }
 }
