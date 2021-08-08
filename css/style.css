@@ -47,6 +47,12 @@ img {
   color: #e8eaed;
 }
 
+@media screen and (max-width: 767px) {
+  .titleBox {
+    font-size: 24px;
+  }
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -84,20 +90,20 @@ img {
 }
 
 .headerTop .headerTopCenter {
-  width: 200px;
+  width: 240px;
   display: inline-block;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1079px) {
   .headerTop .headerTopCenter {
-    width: 150px;
+    width: 200px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .headerTop .headerTopCenter {
-    width: 100px;
+    width: 150px;
   }
 }
 
@@ -245,12 +251,14 @@ img {
   color: #F3A70D;
   display: inline-block;
   margin: 100px auto 0;
-  border-bottom: 1px solid #e8eaed;
 }
 
 @media screen and (max-width: 767px) {
   .conceptTitle {
+    width: 140px;
+    height: 30px;
     margin: 40px auto 0;
+    font-size: 20px;
   }
 }
 
@@ -258,6 +266,12 @@ img {
   width: 100%;
   height: 100%;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard {
+    margin-top: 10px;
+  }
 }
 
 .conceptCard .conceptCardBox {
@@ -313,7 +327,9 @@ img {
 
 @media screen and (max-width: 767px) {
   .conceptCard .conceptCardBox .conceptImgBox {
-    width: 100%;
+    width: 100vw;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
   }
 }
 
@@ -326,6 +342,12 @@ img {
   content: "";
   height: 100%;
   width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox .conceptImgBox:after {
+    display: none;
+  }
 }
 
 .conceptCard .conceptCardBox .conceptTextBox {
@@ -348,14 +370,26 @@ img {
 }
 
 .conceptCard .conceptCardBox .conceptTextBox #conceptSubTitle {
-  font-size: 18px;
+  font-size: 20px;
   color: #F3A70D;
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox .conceptTextBox #conceptSubTitle {
+    font-size: 16px;
+  }
 }
 
 .conceptCard .conceptCardBox .conceptTextBox #conceptText {
   color: #e8eaed;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .conceptCard .conceptCardBox .conceptTextBox #conceptText {
+    margin-top: 20px;
+  }
 }
 
 .owner {
@@ -376,12 +410,14 @@ img {
   color: #F3A70D;
   display: inline-block;
   margin: 100px auto 0;
-  border-bottom: 1px solid #e8eaed;
 }
 
 @media screen and (max-width: 767px) {
   .ownerTitle {
+    width: 140px;
+    height: 30px;
     margin: 20px auto 0;
+    font-size: 20px;
   }
 }
 
@@ -389,6 +425,12 @@ img {
   width: 100%;
   height: 100%;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard {
+    margin-top: 10px;
+  }
 }
 
 .ownerCard .ownerCardBox {
@@ -452,7 +494,9 @@ img {
 
 @media screen and (max-width: 767px) {
   .ownerCard .ownerCardBox .ownerImgBox {
-    width: 100%;
+    width: 100vw;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
   }
 }
 
@@ -465,6 +509,12 @@ img {
   content: "";
   height: 100%;
   width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox .ownerImgBox:after {
+    display: none;
+  }
 }
 
 .ownerCard .ownerCardBox .ownerTextBox {
@@ -486,14 +536,26 @@ img {
 }
 
 .ownerCard .ownerCardBox .ownerTextBox #ownerSubTitle {
-  font-size: 18px;
+  font-size: 20px;
   color: #F3A70D;
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox .ownerTextBox #ownerSubTitle {
+    font-size: 16px;
+  }
 }
 
 .ownerCard .ownerCardBox .ownerTextBox #ownerText {
   color: #e8eaed;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .ownerCard .ownerCardBox .ownerTextBox #ownerText {
+    margin-top: 20px;
+  }
 }
 
 .shop {
@@ -514,19 +576,21 @@ img {
   color: #F3A70D;
   display: inline-block;
   margin: 100px auto 0;
-  border-bottom: 1px solid #e8eaed;
 }
 
 @media screen and (max-width: 767px) {
   .shopTitle {
+    width: 140px;
+    height: 30px;
     margin: 20px auto 0;
+    font-size: 20px;
   }
 }
 
 .shopCard {
   width: 100%;
   height: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .shopCard .shopCardBox {
@@ -556,7 +620,11 @@ img {
 
 @media screen and (max-width: 767px) {
   .shopCard .shopCardBox .shopImgBox {
-    width: 100%;
+    width: 100vw;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    padding: 0;
+    border: none;
   }
 }
 
@@ -579,14 +647,26 @@ img {
 }
 
 .shopCard .shopCardBox .shopTextBox #shopSubTitle {
-  font-size: 18px;
+  font-size: 20px;
   color: #F3A70D;
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .shopCard .shopCardBox .shopTextBox #shopSubTitle {
+    font-size: 16px;
+  }
 }
 
 .shopCard .shopCardBox .shopTextBox #shopText {
   color: #e8eaed;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .shopCard .shopCardBox .shopTextBox #shopText {
+    margin-top: 20px;
+  }
 }
 
 .location {
@@ -612,7 +692,7 @@ img {
 .locationInfoBox {
   width: 100%;
   height: 240px;
-  margin-top: 10px;
+  margin-top: 40px;
   position: relative;
 }
 
@@ -631,6 +711,7 @@ img {
 
 @media screen and (max-width: 767px) {
   .locationInfoBox {
+    margin-top: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -754,13 +835,14 @@ img {
 }
 
 .servicesPriceBox {
-  margin: 10px auto 0;
+  margin: 40px auto 0;
   width: 80%;
   border: 1px solid rgba(232, 234, 237, 0.5);
 }
 
 @media screen and (max-width: 767px) {
   .servicesPriceBox {
+    margin-top: 20px;
     width: 100%;
   }
 }
@@ -873,7 +955,7 @@ img {
 }
 
 .newsList {
-  margin: 10px auto 0;
+  margin: 40px auto 0;
   width: 80%;
   border: 1px solid rgba(232, 234, 237, 0.5);
   padding: 40px 60px;
@@ -881,6 +963,7 @@ img {
 
 @media screen and (max-width: 767px) {
   .newsList {
+    margin-top: 20px;
     width: 100%;
     padding: 5%;
   }
@@ -1018,6 +1101,39 @@ img {
   background-color: rgba(232, 234, 237, 0.1);
 }
 
+.bookingBox .bookingBtnBox .dmBtn:before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: -3px 10px 0 0;
+  background: url("../img/Icon awesome-instagram@2x.png") no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.bookingBox .bookingBtnBox .webBtn:before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: -3px 10px 0 0;
+  background: url("../img/calendar-white@2x.png") no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.bookingBox .bookingBtnBox .phoneBtn:before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: -3px 10px 0 0;
+  background: url("../img/Icon feather-phone@2x.png") no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
 .contact {
   background: #202124;
   width: 100%;
@@ -1039,7 +1155,7 @@ img {
 }
 
 .contactBox {
-  margin: 10px auto 0;
+  margin: 40px auto 0;
   width: 60%;
   border: 1px solid rgba(232, 234, 237, 0.5);
   padding-bottom: 100px;
@@ -1048,6 +1164,7 @@ img {
 @media screen and (max-width: 767px) {
   .contactBox {
     width: 100%;
+    margin-top: 20px;
   }
 }
 
