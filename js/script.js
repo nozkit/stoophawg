@@ -1,22 +1,23 @@
 $(function () {
 
-
+  // メインビジュアルサイズ調整
   var winH = $(window).height();
-  $('.top').outerHeight($(window).height());
+  $('#top').outerHeight($(window).height());
   $(window).on('resize', function () {
     winH = $(window).height();
-    $('.top').outerHeight(winH);
+    $('#top').outerHeight(winH);
   });
 
   if (window.matchMedia("(max-width: 767px)").matches) {
-    $('.top').css({
+    $('#top').css({
       'height': '-=80px'
     });
   } else {
-    $('.top').css({
+    $('#top').css({
       'height': '-=220px'
     });
   }
+  // メインビジュアルサイズ調整
 
 
   // header
@@ -37,6 +38,18 @@ $(function () {
   // NavBar
   
   // NavBar
+
+  // リンク位置調整
+  $('a[href^="#"]').click(function() {
+		var speed = 800;
+		var adjust = 200;
+		var href= $(this).attr("href");
+		var target = $(href == "#" || href == "" ? 'html' : href);
+		var position = target.offset().top - adjust;
+		$('body,html').animate({scrollTop:position}, speed, 'swing');
+		return false;
+	});
+  // リンク位置調整
 
 });
 
