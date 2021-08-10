@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "ヒラギノ明朝 ProN", "Times New Roman";
   font-size: 16px;
@@ -240,7 +244,7 @@ img {
      object-fit: cover;
 }
 
-.about {
+#about {
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#1c1d1f), color-stop(20%, rgba(28, 29, 31, 0.7)), to(#1c1d1f));
   background: linear-gradient(to bottom, #1c1d1f, rgba(28, 29, 31, 0.7) 20%, #1c1d1f);
@@ -689,7 +693,7 @@ img {
   }
 }
 
-.location {
+#location {
   background: #1C1D1F;
   width: 100%;
   height: 600px;
@@ -835,7 +839,7 @@ img {
   filter: grayscale(0) saturate(2);
 }
 
-.services {
+#services {
   background: #1C1D1F;
   width: 100%;
 }
@@ -949,14 +953,14 @@ img {
   }
 }
 
-.news {
+#news {
   background: #1C1D1F;
   width: 100%;
   padding-bottom: 80px;
 }
 
 @media screen and (max-width: 767px) {
-  .news {
+  #news {
     padding-bottom: 40px;
   }
 }
@@ -1045,7 +1049,7 @@ img {
   font-weight: bold;
 }
 
-.booking {
+#booking {
   background: -webkit-gradient(linear, left top, left bottom, from(#1c1d1f), color-stop(50%, rgba(28, 29, 31, 0.7)), to(#1c1d1f));
   background: linear-gradient(to bottom, #1c1d1f, rgba(28, 29, 31, 0.7) 50%, #1c1d1f);
   width: 100%;
@@ -1053,7 +1057,7 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-  .booking {
+  #booking {
     padding: 40px 0;
   }
 }
@@ -1098,6 +1102,12 @@ img {
 
 .bookingBox .bookingBtnBox {
   text-align: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .bookingBox .bookingBtnBox {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1155,7 +1165,7 @@ img {
   vertical-align: middle;
 }
 
-.contact {
+#contact {
   background: #1C1D1F;
   width: 100%;
   padding-bottom: 80px;
