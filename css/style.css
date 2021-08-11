@@ -237,6 +237,16 @@ img {
   transition: opacity 1s;
 }
 
+.headerNavBar {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.headerNavBar--unpinned {
+  -webkit-transform: translateY(-150%);
+  transform: translateY(-150%);
+}
+
 #topImg {
   width: 700;
   height: 100%;
