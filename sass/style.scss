@@ -223,6 +223,15 @@ img {
     }
 }
 
+.headerNavBar {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+  
+.headerNavBar--unpinned {
+    -webkit-transform: translateY(-150%);
+    transform: translateY(-150%);
+}
 
 // NavBar
 
