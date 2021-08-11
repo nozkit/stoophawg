@@ -26,18 +26,7 @@ $(function () {
 
 
   // header
-  var $win = $(window),
-    $header = $('header'),
-    animationClass = 'is-animation';
-
-  $win.on('load scroll', function () {
-    var value = $(this).scrollTop();
-    if (value > 300) {
-      $header.addClass(animationClass);
-    } else {
-      $header.removeClass(animationClass);
-    }
-  });
+  
   // header
 
 
