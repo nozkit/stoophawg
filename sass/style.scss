@@ -31,7 +31,7 @@ html {
 }
 
 body {
-    font-family: "ヒラギノ明朝 ProN", "Times New Roman";
+    font-family: 'Playfair Display SC', serif;
     font-size: 16px;
     background-image: url("../img/background-img-01.jpg");
     background-size: cover;
@@ -71,12 +71,28 @@ img {
 
 .titleBox {
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     color: $colorLetter;
+    transform: translate3d(0, 10px, 0);
+    transition: 1.5s;
+    opacity: 0;
 
     @include mq(sp) {
         font-size: 24px;
+    }
+}
+
+.titleBox.animated {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+.title {
+    width: 24%;
+
+    @include mq(sp) {
+        width: 40%;
     }
 }
  // 共通クラス
@@ -252,8 +268,6 @@ img {
 }
 
 .aboutTitle {
-    width: 200px;
-    height: 36px;
     display: inline-block;
     margin: 80px auto 0;
     border-bottom: 1px solid $colorAccent;
@@ -263,17 +277,29 @@ img {
     }
 }
 
+.subtitle {
+    font-size: 30px;
+}
+
 // concept
 
 .concept {
     width: 100%;
+    margin-top: 200px;
+
+    @include mq(tab) {
+        margin-top: 80px;
+    }
+
+    @include mq(sp) {
+        margin-top: 40px;
+    }
 }
 
 .conceptTitle {
     width: 160px;
     height: 40px;
     font-size:30px;
-    color: $colorAccent;
     display: inline-block;
     margin: 100px auto 0;
     
@@ -289,7 +315,6 @@ img {
 .conceptCard {
     width: 100%;
     height: 100%;
-    margin-top: 20px;
 
     @include mq(sp) {
         margin-top: 10px;
@@ -358,7 +383,6 @@ img {
             
 
             #conceptSubTitle {
-                font-size: 20px;
                 color: $colorAccent;
                 text-align: center;
 
@@ -384,9 +408,13 @@ img {
 
 .owner {
     width: 100%;
-    margin-top: 80px;
+    margin-top: 200px;
 
     @include mq(tab) {
+        margin-top: 80px;
+    }
+
+    @include mq(sp) {
         margin-top: 40px;
     }
 }
@@ -395,7 +423,6 @@ img {
     width: 160px;
     height: 40px;
     font-size:30px;
-    color: $colorAccent;
     display: inline-block;
     margin: 100px auto 0;
 
@@ -483,7 +510,6 @@ img {
             
 
             #ownerSubTitle {
-                font-size: 20px;
                 color: $colorAccent;
                 text-align: center;
 
@@ -508,9 +534,13 @@ img {
 // shop
 .shop {
     width: 100%;
-    margin-top: 80px;
+    margin-top: 200px;
 
     @include mq(tab) {
+        margin-top: 80px;
+    }
+
+    @include mq(sp) {
         margin-top: 40px;
     }
 }
@@ -519,7 +549,6 @@ img {
     width: 160px;
     height: 40px;
     font-size:30px;
-    color: $colorAccent;
     display: inline-block;
     margin: 100px auto 0;
 
@@ -576,7 +605,6 @@ img {
             }
 
             #shopSubTitle {
-                font-size: 20px;
                 color: $colorAccent;
                 text-align: center;
 
@@ -609,8 +637,6 @@ img {
 }
 
 .locationTitle {
-    width: 200px;
-    height: 36px;
     display: inline-block;
     margin: 160px auto 0;
     border-bottom: 1px solid $colorAccent;
@@ -722,8 +748,6 @@ img {
 }
 
 .servicesTitle {
-    width: 200px;
-    height: 36px;
     display: inline-block;
     margin: 160px auto 0;
     border-bottom: 1px solid $colorAccent;
@@ -818,8 +842,6 @@ img {
 }
 
 .newsTitle {
-    width: 200px;
-    height: 36px;
     display: inline-block;
     margin: 160px auto 0;
     border-bottom: 1px solid $colorAccent;
@@ -907,8 +929,6 @@ img {
 }
 
 .bookingTitle {
-    width: 200px;
-    height: 36px;
     display: inline-block;
     margin: 0 auto;
     border-bottom: 1px solid $colorAccent;
@@ -999,8 +1019,6 @@ img {
 }
 
 .contactTitle {
-    width: 200px;
-    height: 36px;
     display: inline-block;
     margin: 80px auto 0;
     border-bottom: 1px solid $colorAccent;
@@ -1083,6 +1101,52 @@ img {
 
 // footer
 
+
+
+// archive.html
+
+.archive {
+    width: 100%;
+    padding: 80px 0;
+    background: linear-gradient(to bottom, rgba(28,29,31,1), rgba(28,29,31,0.7) 20%, rgba(28,29,31,1)) ;
+}
+
+.newsTitleArchive {
+    margin: 40px auto;
+}
+
+.archiveWrap {
+    margin: 40px auto 0;
+    width: 80%;
+    border: 1px solid rgba(232,234,237,0.5);
+    padding: 40px 60px;
+
+    @include mq(sp) {
+        margin-top: 20px;
+        width: 100%;
+        padding: 5%;
+    }
+}
+
+.entries {
+    color: $colorLetter;
+}
+
+.entry-item-body {
+    margin: 40px auto;
+}
+
+.titleDateBox {
+    display: flex;
+
+    @include mq(sp) {
+        display: inline;
+    }
+}
+
+.entry-item-meta {
+    margin-right: 30px;
+}
 
 
 
